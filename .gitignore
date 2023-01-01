@@ -13,13 +13,17 @@ dist
 dist-ssr
 coverage
 *.local
+.firebaserc
+firebase.json
+
 
 /cypress/videos/
 /cypress/screenshots/
 
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
+.firebase
+.github
+.vscode
 .idea
 *.suo
 *.ntvs*
