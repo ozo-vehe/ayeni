@@ -11,7 +11,7 @@
       <div class="w-400 overflow-hidden about-image">
         <img class="w-full" :src="about" alt="Profile Picture">
       </div>
-      <div class="w-670 border">
+      <div class="w-670">
         <p>
           Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
           consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
