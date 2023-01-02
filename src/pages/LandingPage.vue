@@ -12,7 +12,7 @@ defineProps({
   <main class="landingPage">
     <NavBar name="obatobi"/>
     <div class="relative w-full min-h-screen box-border px-20 min-h-100 flex flex-wrap justify-center items-center gap-40">
-      <div class="w-500">
+      <div class="w-800">
         <h1 class="mb-4 leading-normal text-dark text-5xl font-bold">
           Designing brands &amp; products for <br/>
           audacious businesses.

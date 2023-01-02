@@ -46,13 +46,13 @@
 </script>
 
 <template>
-  <main class="bg-bg-color w-full border border-black px-20 py-10">
+  <main class="bg-bg-color w-full px-20 py-10">
     <h1 class="font-bold text-4xl mb-6">Projects</h1>
     <div class="links flex gap-x-8 capitalize">
       <a href="#">product design</a>
-      <a href="#"> brand design</a>
+      <a href="#">brand design</a>
     </div>
-    <div class="w-full my-32" v-for="project in projects" :key="project.id">
+    <div class="w-full my-36" v-for="project in projects" :key="project.id">
       <template v-if="project.id % 2 !== 0">
         <Project order="order-1" :project="project" />
       </template>

@@ -7,11 +7,11 @@
 </script>
 
 <template>
-  <main class="flex justify-between flex-wrap">
+  <main class="flex justify-center gap-20 flex-wrap">
     <div class="projectImage w-400" :class="order">
       <img class="w-full" :src="project.image" :alt="project.name">
     </div>
-    <div class="projectInfo w-700">
+    <div class="projectInfo w-600">
       <h1 class="text-3xl font-bold tracking-wide leading-normal">{{ project.name }}</h1>
       <div class="projectTags flex gap-x-8 my-4">
         <p class="bg-violet-200 px-4 py-1 rounded" v-for="tag in project.tags">
