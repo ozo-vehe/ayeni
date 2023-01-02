@@ -20,7 +20,7 @@ const links = reactive([
 </script>
 
 <template>
-  <main class="box-border absolute z-10 w-screen px-20 py-8 flex justify-between">
+  <main class="box-border px-20 py-8 flex justify-between">
     <h1 class="text-dark text-2xl font-bold">{{ name }}</h1>
     <ul class="flex gap-10">
       <li v-for="link in links">

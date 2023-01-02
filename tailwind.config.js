@@ -6,7 +6,19 @@ module.exports = {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        "30": "30px",
+        "40": "40px",
+        "400": "400px",
+        "500": "500px",
+        "600": "600px",
+        "700": "700px",
+      },
+      colors: {
+        "bg-color": "#F5F7FE",
+      }
+    },
   },
   plugins: [],
 }

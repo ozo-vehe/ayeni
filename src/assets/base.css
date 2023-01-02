@@ -57,10 +57,7 @@ body {
   font-size: 16px;
   padding: 0px;
   margin: 0px;
+  box-sizing: border-box;
   text-rendering: optimizeLegibility;
-  background-image: url("./images/bg.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 

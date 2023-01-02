@@ -1,12 +1,12 @@
 <script setup>
-import NavBar from './components/NavBar.vue';
 import LandingPage from './pages/LandingPage.vue';
+import ProjectsPage from './pages/ProjectsPage.vue';
 </script>
 
 <template>
   <main class="min-h-screen">
-    <NavBar name="obatobi"/>
     <LandingPage />
+    <ProjectsPage />
   </main>
 </template>
 
