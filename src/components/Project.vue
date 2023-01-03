@@ -13,7 +13,7 @@
       <img class="w-full" :src="project.image" :alt="project.name">
     </div>
     <div class="projectInfo w-600">
-      <h1 class="text-3xl font-bold tracking-wide leading-normal">{{ project.name }}</h1>
+      <h1 class="text-3xl p-0 m-0 font-bold tracking-wide leading-normal">{{ project.name }}</h1>
       <div class="projectTags flex gap-x-8 my-4">
         <p class="bg-violet-200 px-4 py-1 rounded" v-for="tag in project.tags">
           <span class="text-violet-900">{{ tag }}</span>

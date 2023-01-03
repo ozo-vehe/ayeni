@@ -22,7 +22,8 @@
     {name: "medium", href: "https://medium.com/@johnnie.vehe", iconLink: medium},
   ])
 
-  let windowWidth = ref(0);
+  let windowWidth = ref(801);
+  let slide = ref(false);
 
 // Functions
   window.addEventListener("resize", function() {
@@ -31,9 +32,16 @@
 </script>
 
 <template>
-  <main class="box-border px-20 py-8 flex flex-wrap gap-y-8 justify-between">
+  <main class="relative box-border px-20 py-8 flex flex-wrap gap-y-8 justify-between">
     <img class="w-50" :src="logo" alt="Logo">
-    <img v-if="windowWidth <= 800" :src="hamburger" alt="Hamburger">
+    <div v-if="windowWidth <= 800" class="mobileNav">
+      <img @click="slide=!slide" class="cursor-pointer" :src="hamburger" alt="Hamburger"/>
+      <ul :class="{slide: slide}" class="py-8 transition-all bg-white absolute left-0 -bottom-0 w-full flex justify-center gap-10">
+        <li v-for="link in links">
+          <a :href="link.href" target="_blank"><img class="w-50" :src="link.iconLink" :alt="link.name" /></a>
+        </li>
+      </ul>
+    </div>
     <ul v-else class="flex gap-10">
       <li v-for="link in links">
         <a :href="link.href" target="_blank"><img class="w-50" :src="link.iconLink" :alt="link.name" /></a>
@@ -43,12 +51,20 @@
 </template>
 
 <style scoped>
-  main {
-    border: thin solid red;
-  }
-  @media screen and (max-width: 800) {
+  @media screen and (max-width: 800px) {
     main {
-      background-color: aliceblue;
+      padding: 20px 50px;
+      margin-bottom: 150px;
+      background-color: #fff;
+    }
+    .mobileNav ul {
+      z-index: -1;
+      bottom: 0;
+      transition: all 0.5s;
+    }
+    .mobileNav ul.slide {
+      z-index: 0;
+      bottom: -6rem;
     }
   }
 </style>

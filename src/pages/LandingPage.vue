@@ -11,7 +11,7 @@ defineProps({
 <template>
   <main class="landingPage">
     <NavBar name="obatobi"/>
-    <div class="relative w-full min-h-screen box-border px-20 pb-32 flex flex-wrap justify-center items-center">
+    <div class="relative w-full min-h-screen box-border px-20 pb-32 pt-16 flex flex-wrap gap-y-16 justify-center items-center">
       <div class="heroText w-720 order-0">
         <h1 class="mb-4 leading-normal text-dark text-5xl font-bold">
           Designing brands &amp; products for
@@ -58,6 +58,18 @@ defineProps({
     .heroText h1 {
       font-size: 1.7rem;
       margin: 0px;
+    }
+    .heroText button {
+      margin: 30px auto;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    main h1 {
+      text-align: center;
+    }
+    .heroText p {
+      text-align: center;
     }
     .heroText button {
       margin: 30px auto;
