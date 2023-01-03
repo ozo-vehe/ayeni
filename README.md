@@ -1,28 +1,12 @@
-# obatobi
-Live link: https://obatobiayeni.web.app/
+# Obatobi Ayeni
+A portfolio website built with Vue JS for UX/UI designers
 
-## Recommended IDE Setup
+# Tech Stack
+Vue JS
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Tailwind CSS
 
-## Customize configuration
+Pinia
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+# Live Link
+https://obatobiayeni.web.app/
