@@ -11,10 +11,10 @@ defineProps({
 <template>
   <main class="landingPage">
     <NavBar name="obatobi"/>
-    <div class="relative w-full min-h-screen box-border px-20 flex flex-wrap justify-center items-center">
-      <div class="w-720">
+    <div class="relative w-full min-h-screen box-border px-20 pb-32 flex flex-wrap justify-center items-center">
+      <div class="heroText w-720 order-0">
         <h1 class="mb-4 leading-normal text-dark text-5xl font-bold">
-          Designing brands &amp; products for <br/>
+          Designing brands &amp; products for
           audacious businesses.
         </h1>
         <p class="pt-6 text-base text-gray-900">
@@ -42,5 +42,25 @@ defineProps({
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+  }
+
+  @media screen and (max-width: 800px) {
+    main > div {
+      padding: 0px 50px;
+    }
+    .heroText {
+      order: 1;
+      text-align: center;
+      display: flex;
+      flex-direction:column;
+      padding: 70px 0px;
+    }
+    .heroText h1 {
+      font-size: 1.7rem;
+      margin: 0px;
+    }
+    .heroText button {
+      margin: 30px auto;
+    }
   }
 </style>
