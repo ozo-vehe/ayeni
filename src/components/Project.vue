@@ -1,5 +1,6 @@
 <script setup>
   import Button from "./Button.vue";
+  import icon from "../assets/icons/arrow.png";
   defineProps({
     project: Object,
     order: String,
@@ -20,7 +21,13 @@
       </div>
       <p class="mt-12">{{ project.description }}</p>
 
-      <Button text="See more" :link="project.link" />
+      <Button
+        text="See more"
+        :link="project.link"
+        background="bg-black"
+        textColor="text-bg-color"
+        :icon="icon"
+      />
     </div>
   </main>
 </template>

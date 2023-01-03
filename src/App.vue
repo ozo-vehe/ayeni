@@ -2,6 +2,7 @@
 import LandingPage from './pages/LandingPage.vue';
 import ProjectsPage from './pages/ProjectsPage.vue';
 import AboutPage from './pages/AboutPage.vue';
+import FooterPage from './pages/FooterPage.vue';
 </script>
 
 <template>
@@ -9,6 +10,7 @@ import AboutPage from './pages/AboutPage.vue';
     <LandingPage />
     <ProjectsPage />
     <AboutPage />
+    <FooterPage />
   </main>
 </template>
 

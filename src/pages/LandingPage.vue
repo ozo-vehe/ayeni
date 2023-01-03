@@ -11,8 +11,8 @@ defineProps({
 <template>
   <main class="landingPage">
     <NavBar name="obatobi"/>
-    <div class="relative w-full min-h-screen box-border px-20 min-h-100 flex flex-wrap justify-center items-center gap-40">
-      <div class="w-800">
+    <div class="relative w-full min-h-screen box-border px-20 flex flex-wrap justify-center items-center">
+      <div class="w-720">
         <h1 class="mb-4 leading-normal text-dark text-5xl font-bold">
           Designing brands &amp; products for <br/>
           audacious businesses.
@@ -21,7 +21,12 @@ defineProps({
           Welcome! I am {{name || "Obatobi"}} and this is a selection of my best work!
         </p>
 
-        <Button text="hello@obatobiayeni.com" link="mailto:hello@obatobiayeni.com"/>
+        <Button
+          text="hello@obatobiayeni.com" 
+          link="mailto:hello@obatobiayeni.com"
+          background="bg-black"
+          textColor="text-bg-color"
+        />
       </div>
 
       <div class="w-400 h-50 overflow-hidden text-center">

@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <main class="px-20 bg-bg-color">
+  <main class="px-20 pb-36 bg-bg-color">
     <h1 class="font-bold text-4xl">About Me</h1>
     <div class="mt-20 pb-16 flex justify-center flex-wrap gap-x-16 gap-y-8 items-start">
       <div class="w-400 overflow-hidden about-image">
@@ -20,9 +20,19 @@
           ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
           Exercitation veniam consequat sunt nostrud amet.
         </p>
-        <div class="mt-8">
-          <Button class="mr-8" text="LinkedIn Profile" link="#" />
-          <Button text="Download Resume" link="#" />
+        <div class="mt-8 flex">
+          <Button 
+            class="mr-8"
+            text="LinkedIn Profile"
+            link="#"
+            textColor="text-bg-color"
+            background="bg-black"
+          />
+          <Button
+            text="Download Resume"
+            link="#"
+            border="border border-black"
+          />
         </div>
       </div>
     </div>
