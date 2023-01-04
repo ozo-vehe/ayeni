@@ -43,8 +43,10 @@
     main button {
       width: 100%;
       margin-top: 20px;
+      padding: 15px 0px;
     }
     .footerButton {
+      font-size: 1rem;
       width: 100%;
       margin-top: 30px;
     }

@@ -20,7 +20,7 @@
           ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
           Exercitation veniam consequat sunt nostrud amet.
         </p>
-        <div class="mt-8 flex">
+        <div class="aboutButton mt-8 flex flex-wrap">
           <Button 
             class="mr-8"
             text="LinkedIn Profile"
@@ -58,10 +58,14 @@
       text-align: left;
       font-size: 1.1rem
     }
+    .aboutButton {
+      justify-content: center;
+      gap: 10px;
+    }
     main button {
       font-size: 1rem;
-      padding: 16px 40px;
-      margin: 20px auto 0px;
+      padding: 16px 23px;
+      margin: 0px;
     }
   }
 </style>

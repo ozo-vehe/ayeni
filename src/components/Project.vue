@@ -36,6 +36,7 @@
   @media screen and (max-width: 800px) {
     main {
       padding: 0px;
+      gap: 40px;
     }
     .projectImage {
       width: 100%;
@@ -49,7 +50,7 @@
       margin: 0px;
     }
     .projectTags {
-      gap: 0px 10px;
+      gap: 10px 5px;
       font-size: 0.9rem;
     }
     .projectInfo > p {
