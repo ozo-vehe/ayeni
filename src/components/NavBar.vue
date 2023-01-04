@@ -1,5 +1,5 @@
 <script setup>
-  import { reactive, ref } from "vue";
+  import { onMounted, reactive, ref } from "vue";
   import behance from "../assets/icons/icon(1).png";
   import medium from "../assets/icons/icon(2).png";
   import twitter from "../assets/icons/icon(3).png";
@@ -29,6 +29,9 @@
   window.addEventListener("resize", function() {
     windowWidth.value = window.innerWidth;
   })
+  onMounted(() => {
+    windowWidth.value = window.innerWidth;
+  })
 </script>
 
 <template>
@@ -53,13 +56,13 @@
 <style scoped>
   @media screen and (max-width: 800px) {
     main {
-      padding: 20px 50px;
+      padding: 20px;
       margin-bottom: 150px;
       background-color: #fff;
     }
     .mobileNav ul {
       z-index: -1;
-      bottom: 0;
+      bottom: 0rem;
       transition: all 0.5s;
     }
     .mobileNav ul.slide {

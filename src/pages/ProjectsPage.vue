@@ -52,7 +52,7 @@
       <a href="#">product design</a>
       <a href="#">brand design</a>
     </div>
-    <div class="w-full border text-center my-36" v-for="project in projects" :key="project.id">
+    <div class="w-full text-center my-36" v-for="project in projects" :key="project.id">
       <template v-if="project.id % 2 !== 0">
         <Project order="order-1" :project="project" />
       </template>
@@ -66,7 +66,7 @@
 <style scoped>
   @media screen and (max-width: 800px) {
     main {
-      padding: 50px;
+      padding: 50px 20px;
     }
   }
 </style>

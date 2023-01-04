@@ -14,7 +14,7 @@
     </div>
     <div class="projectInfo w-600">
       <h1 class="text-3xl p-0 m-0 font-bold tracking-wide leading-normal">{{ project.name }}</h1>
-      <div class="projectTags flex gap-x-8 my-4">
+      <div class="projectTags flex flex-wrap gap-x-8 my-4">
         <p class="bg-violet-200 px-4 py-1 rounded" v-for="tag in project.tags">
           <span class="text-violet-900">{{ tag }}</span>
         </p>
@@ -31,3 +31,32 @@
     </div>
   </main>
 </template>
+
+<style scoped>
+  @media screen and (max-width: 800px) {
+    main {
+      padding: 0px;
+    }
+    .projectImage {
+      width: 100%;
+      order: 0;
+    }
+    .projectInfo {
+      text-align: left;
+    }
+    .projectInfo h1 {
+      font-size: 1.6rem;
+      margin: 0px;
+    }
+    .projectTags {
+      gap: 0px 10px;
+      font-size: 0.9rem;
+    }
+    .projectInfo > p {
+      font-size: 1.1rem;
+    }
+    .projectInfo button {
+      margin: 40px auto 0px;
+    }
+  }
+</style>
