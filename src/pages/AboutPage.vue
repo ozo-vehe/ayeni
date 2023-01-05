@@ -1,6 +1,9 @@
 <script setup>
   import about from "../assets/images/aboutme.png";
   import Button from "../components/Button.vue";
+  import { useProjectsStore } from "../stores/projects";
+
+  const store = useProjectsStore();
 
 </script>
 
@@ -24,7 +27,7 @@
           <Button 
             class="mr-8"
             text="LinkedIn Profile"
-            link="#"
+            :link="store.socialLinks[2].href"
             textColor="text-bg-color"
             background="bg-black"
           />

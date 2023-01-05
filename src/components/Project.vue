@@ -1,10 +1,14 @@
 <script setup>
   import Button from "./Button.vue";
-  import icon from "../assets/icons/arrow.png";
+  import icon1 from "../assets/icons/arrow.png";
+  import icon2 from "../assets/icons/arrow-hover.png";
+  import { ref } from "vue";
+
   defineProps({
     project: Object,
     order: String,
   });
+  let icon = ref(icon1)
 </script>
 
 <template>
@@ -22,6 +26,8 @@
       <p class="mt-12">{{ project.description }}</p>
 
       <Button
+        @mouseover="icon=icon2"
+        @mouseout="icon=icon1"
         text="See more"
         :link="project.link"
         background="bg-black hover:bg-gray-800 transition-all duration-300"
