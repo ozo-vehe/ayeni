@@ -12,9 +12,9 @@
     <div class="projectImage w-400" :class="order">
       <img class="w-full" :src="project.image" :alt="project.name">
     </div>
-    <div class="projectInfo w-600">
+    <div class="projectInfo text-left w-600">
       <h1 class="text-3xl p-0 m-0 font-bold tracking-wide leading-normal">{{ project.name }}</h1>
-      <div class="projectTags flex flex-wrap gap-x-8 my-4">
+      <div class="projectTags flex flex-wrap gap-x-3 my-4">
         <p class="bg-violet-200 px-4 py-1 rounded" v-for="tag in project.tags">
           <span class="text-violet-900">{{ tag }}</span>
         </p>
@@ -24,7 +24,7 @@
       <Button
         text="See more"
         :link="project.link"
-        background="bg-black"
+        background="bg-black hover:bg-gray-800 transition-all duration-300"
         textColor="text-bg-color"
         :icon="icon"
       />
@@ -51,7 +51,7 @@
     }
     .projectTags {
       gap: 10px 5px;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
     .projectInfo > p {
       font-size: 1.1rem;

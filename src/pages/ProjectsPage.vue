@@ -1,10 +1,11 @@
 <script setup>
-  import { reactive } from 'vue';
+  import { reactive, ref } from 'vue';
   import Project from '../components/Project.vue';
   import project1 from '../assets/images/project1.png';
   import project2 from '../assets/images/project2.png';
   import project3 from '../assets/images/project3.png';
-  
+
+  // Data
   const projects = reactive([
     {
       id: 0,
@@ -16,7 +17,8 @@
         "UI Design"
       ],
       description: "Holzarbeit is a small business that provides luxury interior decor services for individuals and firms on a tight budget.",
-      link: "https://www.google.com"
+      link: "https://www.google.com",
+      type: [ "Brand Design" ],
     },
     {
       id: 1,
@@ -28,7 +30,8 @@
         "UI Design"
       ],
       description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-      link: "https://www.google.com"
+      link: "https://www.google.com",
+      type: [ "Product Design" ],
     },
     {
       id: 2,
@@ -40,25 +43,42 @@
         "UI Design"
       ],
       description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-      link: "https://www.google.com"
+      link: "https://www.google.com",
+      type: [ "Brand Design", "Product Design" ],
     }
-  ])
+  ]);
+  let type = ref("Product Design");
 </script>
 
 <template>
   <main class="bg-bg-color w-full px-20 py-10">
     <h1 class="font-bold text-4xl mb-6">Projects</h1>
     <div class="links flex gap-x-8 capitalize">
-      <a href="#">product design</a>
-      <a href="#">brand design</a>
+      <p
+        :class="{'text-gray-500 underline decoration-2 underline-offset-8': type === 'Product Design'}"
+        class="cursor-pointer"
+        @click="type = 'Product Design'"
+      >
+        product design
+      </p>
+      <p
+        :class="{'text-gray-500 underline decoration-2 underline-offset-8': type === 'Brand Design'}"
+        class="cursor-pointer"
+        @click="type = 'Brand Design'"
+      >
+        brand design
+      </p>
     </div>
-    <div class="w-full text-center my-36" v-for="project in projects" :key="project.id">
-      <template v-if="project.id % 2 !== 0">
-        <Project order="order-1" :project="project" />
+    <div class="projectContainer w-full text-center my-36" v-for="project in projects" :key="project.id">
+      <template v-if="project.type.includes(type)">
+        <template v-if="project.id % 2 !== 0">
+          <Project order="order-1" :project="project" />
+        </template>
+        <template v-else>
+          <Project order="order-0" :project="project"/>
+        </template>
       </template>
-      <template v-else>
-        <Project order="order-0" :project="project"/>
-      </template>
+
     </div>
   </main>
 </template>
@@ -67,6 +87,9 @@
   @media screen and (max-width: 800px) {
     main {
       padding: 50px 20px;
+    }
+    .projectContainer {
+      margin-top: 20px;
     }
   }
 </style>

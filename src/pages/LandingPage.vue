@@ -11,9 +11,9 @@ defineProps({
 <template>
   <main class="landingPage">
     <NavBar name="obatobi"/>
-    <div class="relative w-full min-h-screen box-border px-20 pb-32 flex flex-wrap gap-y-16 justify-center items-center">
-      <div class="heroText w-720 order-0">
-        <h1 class="mb-4 leading-normal text-dark text-5xl font-bold">
+    <div class="relative w-full min-h-screen box-border px-20 pb-32 flex flex-wrap gap-x-20 gap-y-16 justify-center items-center">
+      <div class="heroText w-600 order-0">
+        <h1 class="mb-4 leading-normal text-dark text-4xl font-bold">
           Designing brands &amp; products for
           audacious businesses.
         </h1>
@@ -24,7 +24,7 @@ defineProps({
         <Button
           text="hello@obatobiayeni.com" 
           link="mailto:hello@obatobiayeni.com"
-          background="bg-black"
+          background="bg-black hover:bg-gray-800 transition-all duration-300"
           textColor="text-bg-color"
         />
       </div>
