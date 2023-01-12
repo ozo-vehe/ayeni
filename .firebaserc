@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "obatobiayeni"
-  }
+  },
+  "targets": {
+    "obatobiayeni": {
+      "hosting": {
+        "ayeni": [
+          "obatobiayeni"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

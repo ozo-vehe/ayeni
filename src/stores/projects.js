@@ -9,6 +9,8 @@ import whiteDribble from '../assets/icons/wicon(2).png';
 import whiteLinkedIn from '../assets/icons/wicon(3).png';
 import whiteTwitter from '../assets/icons/wicon(4).png';
 import whiteMedium from '../assets/icons/wicon(5).png';
+import db from "../firebaseInit";
+import { collection, getDocs } from 'firebase/firestore';
 
 export const useProjectsStore = defineStore("projects", {
   state: () => ({
@@ -21,5 +23,20 @@ export const useProjectsStore = defineStore("projects", {
     ],
     mail: "mailto:hello@obatobiayeni.com",
     tel: "+2348130159953",
+    projects: [],
   }),
+  actions: {
+    async getProjects() {
+      console.log("initiated...");
+      const docs = await getDocs(collection(db, "projects"));
+      this.projects = [];
+      docs.forEach((doc) => {
+        console.log("Fectched");
+        console.log(doc.data());
+        this.projects.push(doc.data());
+        console.log(this.projects);
+      });
+      console.log("Success");
+    }
+  }
 })

@@ -9,6 +9,7 @@
     order: String,
   });
   let icon = ref(icon1)
+  // console.log(project);
 </script>
 
 <template>

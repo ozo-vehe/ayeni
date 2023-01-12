@@ -1,12 +1,32 @@
 <script setup>
-  import { reactive, ref } from 'vue';
+  import { reactive, ref, onMounted, onBeforeMount } from 'vue';
   import Project from '../components/Project.vue';
   import project1 from '../assets/images/project1.png';
   import project2 from '../assets/images/project2.png';
   import project3 from '../assets/images/project3.png';
+  import { useProjectsStore } from '../stores/projects';
+  import { storeToRefs } from 'pinia';
 
   // Data
-  const projects = reactive([
+  const store = useProjectsStore();
+  const { projects } = storeToRefs(store);
+  
+  onBeforeMount(async () => {
+    console.log("Mounting and fetching...");
+    await store.getProjects();
+    console.log("Mounted and fetched.");
+    console.log(projects.value[0].type);
+  })
+  // onMounted(async() => {
+  //   console.log("Mounting and fetching...");
+  //   await store.getProjects();
+  //   console.log("Mounted and fetched.");
+  //   console.log(projects.value[0].type);
+  // });
+
+  const designProjects = reactive([...projects.value]);
+  // console.log(designProjects);
+  const projectss = reactive([
     {
       id: 0,
       image: project1,
@@ -47,7 +67,7 @@
       type: [ "Brand Design", "Product Design" ],
     }
   ]);
-  let type = ref("Product Design");
+  let type = ref("brand design");
 </script>
 
 <template>
@@ -55,30 +75,32 @@
     <h1 class="font-bold text-4xl mb-6">Projects</h1>
     <div class="links flex gap-x-8 capitalize">
       <p
-        :class="{'text-gray-500 underline decoration-2 underline-offset-8': type === 'Product Design'}"
+        :class="{'text-gray-500 underline decoration-2 underline-offset-8': type === 'product design'}"
         class="cursor-pointer"
-        @click="type = 'Product Design'"
+        @click="type = 'product design'"
       >
         product design
       </p>
       <p
-        :class="{'text-gray-500 underline decoration-2 underline-offset-8': type === 'Brand Design'}"
+        :class="{'text-gray-500 underline decoration-2 underline-offset-8': type === 'brand design'}"
         class="cursor-pointer"
-        @click="type = 'Brand Design'"
+        @click="type = 'brand design'"
       >
         brand design
       </p>
     </div>
-    <div class="projectContainer w-full text-center my-36" v-for="project in projects" :key="project.id">
+    <div v-if="projects" class="projectContainer w-full text-center my-36" v-for="(project, index) in projects">
       <template v-if="project.type.includes(type)">
-        <template v-if="project.id % 2 !== 0">
+        <template v-if="index % 2 !== 0">
           <Project order="order-1" :project="project" />
         </template>
         <template v-else>
           <Project order="order-0" :project="project"/>
         </template>
       </template>
-
+    </div>
+    <div v-else>
+      <h1 class="font-4xl text-black">Loading...</h1>
     </div>
   </main>
 </template>
