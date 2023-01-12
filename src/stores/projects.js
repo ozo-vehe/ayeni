@@ -27,16 +27,11 @@ export const useProjectsStore = defineStore("projects", {
   }),
   actions: {
     async getProjects() {
-      console.log("initiated...");
       const docs = await getDocs(collection(db, "projects"));
       this.projects = [];
       docs.forEach((doc) => {
-        console.log("Fectched");
-        console.log(doc.data());
         this.projects.push(doc.data());
-        console.log(this.projects);
       });
-      console.log("Success");
     }
   }
 })
