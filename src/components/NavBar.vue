@@ -27,9 +27,11 @@
 
 <template>
   <main class="relative box-border px-20 py-8 flex flex-wrap gap-y-8 justify-between">
-    <img class="w-50" :src="logo" alt="Logo">
-    <div v-if="windowWidth <= 800" class="mobileNav">
-      <img @click="slide=!slide" class="cursor-pointer" :src="hamburger" alt="Hamburger"/>
+    <div v-if="windowWidth <= 800" class="mobileNav w-full">
+      <div class="navImg w-full flex justify-between">
+        <img class="w-50" :src="logo" alt="Logo" />
+        <img @click="slide=!slide" class="cursor-pointer" :src="hamburger" alt="Hamburger"/>
+      </div>
       <ul :class="{slide: slide}" class="py-8 transition-all bg-white absolute left-0 -bottom-0 w-full flex justify-center gap-10">
         <li v-for="link in links">
           <a :href="link.href" target="_blank"><img class="w-50" :src="link.link1" :alt="link.name" /></a>
@@ -51,8 +53,13 @@
       margin-bottom: 150px;
       background-color: #fff;
     }
+    .navImg {
+      position: relative;
+      background-color: #fff;
+      z-index: 10;
+    }
     .mobileNav ul {
-      z-index: -1;
+      z-index: 1;
       bottom: 0rem;
       transition: all 0.5s;
     }

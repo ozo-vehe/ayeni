@@ -5,7 +5,7 @@
   import { storeToRefs } from 'pinia';
 
   // Data
-  let type = ref("All");
+  let type = ref("product design");
   const store = useProjectsStore();
   const { projects } = storeToRefs(store);
   const { getProjects } = store;
@@ -43,15 +43,7 @@
       </p>
     </div>
     <div v-if="projects" class="projectContainer w-full text-center my-36" v-for="(project, index) in projects">
-      <template v-if="project.type.includes(type)">
-        <template v-if="index % 2 !== 0">
-          <Project order="order-1" :project="project" />
-        </template>
-        <template v-else>
-          <Project order="order-0" :project="project"/>
-        </template>
-      </template>
-      <template v-else>
+      <template v-if="project.type.includes(type) || project.type.includes('All')">
         <template v-if="index % 2 !== 0">
           <Project order="order-1" :project="project" />
         </template>
